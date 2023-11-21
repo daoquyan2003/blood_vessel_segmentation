@@ -9,9 +9,10 @@ COPY requirements_for_docker.txt .
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y git && \
-    pip install --upgrade pip
+    apt-get install -y python3-pip && \
+    pip3 install --upgrade pip
 
-RUN pip install --no-cache-dir -r requirements_for_docker.txt
+RUN pip3 install --no-cache-dir -r requirements_for_docker.txt
 
 # Install dependencies for cv2
 RUN apt-get install ffmpeg libsm6 libxext6  -y
