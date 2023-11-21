@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  api:
+    build: .
+    image: blood-vessel-image-name # image name
+    container_name: blood-vessel-name # container name
+    volumes:
+      - blood_vessel_data:/workspace/data
+    ports:
+      - 8080:8080
+    shm_size: "2gb" # set the shared memory size to 2GB
+    ulimits:
+      memlock: # unlimited
+        soft: -1
+        hard: -1
+      stack: 67108864 # stack size limit
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+
+volumes:
+  blood_vessel_data:

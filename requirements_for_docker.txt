@@ -36,3 +36,12 @@ rich            # beautiful text formatting in terminal
 pytest          # tests
 # sh            # for running bash commands in some tests (linux/macos only)
 kaggle
+
+#----------------------------#
+# --------resolve conflict ------------#
+markdown-it-py
+mdit-py-plugins
+jupytext
+tornado
+cmake
+lit
