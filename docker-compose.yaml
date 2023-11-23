@@ -26,3 +26,4 @@ services:
 
 volumes:
   blood_vessel_data:
+    external: true
