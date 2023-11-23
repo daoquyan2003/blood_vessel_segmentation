@@ -9,12 +9,13 @@ COPY requirements_for_docker.txt .
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y git && \
-    pip install --upgrade pip
+    pip install --upgrade pip && \
+    apt-get install -y tmux
 
 RUN pip install --no-cache-dir -r requirements_for_docker.txt
 
 # Install dependencies for cv2
-RUN apt-get install ffmpeg libsm6 libxext6  -y
+RUN apt-get install -y ffmpeg libsm6 libxext6 
 
 # set PYTHONPATH
 ENV PYTHONPATH "${PYTHONPATH}:/workspace/src"
