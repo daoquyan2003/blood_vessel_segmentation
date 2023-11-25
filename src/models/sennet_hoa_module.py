@@ -14,7 +14,7 @@ class SenNetHOAModule(LightningModule):
     ):
         super().__init__()
 
-        self.save_hyperparameters(logger=False, ignore="criterion")
+        self.save_hyperparameters(logger=False, ignore=["net", "criterion"])
 
         self.net = net
 
