@@ -29,7 +29,7 @@ class TransformSenNetHOA(Dataset):
                     A.ShiftScaleRotate(shift_limit=0.05, scale_limit=0.05, p=0.5),
                     A.Affine(scale=0.9, translate_percent=0.9, rotate=(-15, 15), p=0.3),
                     A.Flip(p=0.3),
-                    A.Resize(640, 640),
+                    A.Resize(576, 576),
                     A.Normalize(mean=[0.5], std=[0.5]),
                     ToTensorV2(),
                 ]
